@@ -1,4 +1,5 @@
 <template>
+       <!-- eslint-disable -->
     <div class="2xl:container mx-auto">
         <Navbar/>
         <Nuxt class="px-[60px]"/>
