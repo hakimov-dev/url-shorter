@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="2xl:container mx-auto">
         <Navbar/>
-        <Nuxt />
+        <Nuxt class="px-[60px]"/>
     </div>
 </template>
 
