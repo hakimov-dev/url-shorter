@@ -1,12 +1,10 @@
 <template>
     <div class="container">
-        <h1>What's up?</h1>
+        <Navbar/>
         <Nuxt />
     </div>
 </template>
 
-<script>
-export default{
-    name: 'default-layout'
-}
+<script setup>
+import Navbar from '@/components/Navbar.vue'
 </script>
