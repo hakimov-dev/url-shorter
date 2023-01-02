@@ -5,3 +5,7 @@
     padding: 0;
     margin: 0;
 }
+
+.ant-btn-primary{
+    background-color: #1890ff !important;
+}
