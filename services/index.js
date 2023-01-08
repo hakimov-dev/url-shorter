@@ -1,4 +1,4 @@
-import axios from '@nuxtjs/axios'
+import axios from 'axios'
 
 export function postURL(url){
   return axios.post(`/shorten?url${url}`)
