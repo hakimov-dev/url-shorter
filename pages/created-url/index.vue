@@ -9,12 +9,13 @@
         <p class="text-[16px] font-medium mb-4">Copy the shortened link and share it in messages, texts, posts, websites and other locations.</p>
         <!-- eslint-disable -->
         <a-input-search
+          v-if="url_about.url"
           v-model:value="url_about.url"
           placeholder="Enter long url"
           enter-button="Copy URL"
           size="large"
         />
-        <p class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
+        <p v-if="url_about.long_url" class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
             Long URL: {{ url_about.long_url }}
         </p>
         <p class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
@@ -26,6 +27,7 @@
   
   <script>
   /*eslint-disable */
+  import { state } from '@/store';
   export default{
     data() {
       return {
@@ -35,13 +37,14 @@
   
     methods: {
      getURlAbouts(){
-      if(sessionStorage.getItem('url_about')){
-        this.url_about = JSON.parse(sessionStorage.url_about)
+      if(state.url_abouts){
+        this.url_about = state.url_abouts
         this.url_about.url = window.location.origin + '/' + this.url_about.url_code
-        sessionStorage.removeItem('url_about')
-      }else{
-        this.$router.push('/')
+        state.url_abouts
       }
+      // else{
+      //   this.$router.push('/')
+      // }
      }
     },
 

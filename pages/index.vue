@@ -27,6 +27,7 @@
 import { notification } from 'ant-design-vue';
 import { isValidURL } from '@/utils/reusable'
 import { postURL } from '@/services';
+import { state } from '@/store';
 export default{
   data() {
     return {
@@ -40,10 +41,14 @@ export default{
     if(isValidURL(this.url)){
       postURL(this.url)
         .then(res => {
-          sessionStorage.setItem('url_about', JSON.stringify({
+          state.url_abouts = {
             url_code: res.data.result.code,
-            long_url: res.data.result.original_link
-          }))
+            long_url: res.data.result.original_link    
+          }
+          // sessionStorage.setItem('url_about', JSON.stringify({
+          //   url_code: res.data.result.code,
+          //   long_url: res.data.result.original_link
+          // }))
           this.$router.push('/created-url')
         })
         .catch(e => {
@@ -66,7 +71,7 @@ export default{
 },
 
   created() {
-    sessionStorage.removeItem('url_about')    
+    state.url_abouts = null    
   },
 }
 </script>
