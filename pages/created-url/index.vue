@@ -41,10 +41,9 @@
         this.url_about = state.url_abouts
         this.url_about.url = window.location.origin + '/' + this.url_about.url_code
         state.url_abouts
+      }else{
+        this.$router.push('/')
       }
-      // else{
-      //   this.$router.push('/')
-      // }
      }
     },
 
