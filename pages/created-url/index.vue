@@ -57,5 +57,12 @@
     created() {
      this.getURlAbouts()
     },
+
+    watch: {
+      'url_about.url'(newValue, oldValue){
+        if(newValue !== window.location.origin.split('/')[2] + '/' + this.url_about.url_code)
+          this.url_about.url = window.location.origin.split('/')[2] + '/' + this.url_about.url_code
+      }
+    },
   }
   </script>
