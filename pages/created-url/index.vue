@@ -12,6 +12,7 @@
           v-model:value="url_about.url"
           placeholder="Enter long url"
           enter-button="Copy URL"
+          @change="changeInt"
           size="large"
         />
         <p class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
