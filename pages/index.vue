@@ -22,5 +22,6 @@
 </template>
 
 <script setup>
+import { isValidURL } from '@/utils/reusable'
 const value = ''
 </script>
