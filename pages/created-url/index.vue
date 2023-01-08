@@ -15,6 +15,7 @@
           placeholder="Enter long url"
           enter-button="Copy URL"
           size="large"
+          @search="copy(url_about.url)"
         />
         <p v-if="url_about.long_url" class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
             Long URL: {{ url_about.long_url }}
@@ -29,6 +30,7 @@
   <script>
   /*eslint-disable */
   import { state } from '@/store';
+  import { copyURL } from '@/utils/reusable'
   export default{
     data() {
       return {
@@ -40,11 +42,15 @@
      getURlAbouts(){
       if(state.url_abouts){
         this.url_about = state.url_abouts
-        this.url_about.url = window.location.origin + '/' + this.url_about.url_code
+        this.url_about.url = window.location.origin.split('/')[2] + '/' + this.url_about.url_code
         state.url_abouts
       }else{
         this.$router.push('/')
       }
+     },
+
+     copy(url){
+      return copyURL(url)
      }
     },
 
