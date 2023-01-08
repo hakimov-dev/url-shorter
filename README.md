@@ -1,4 +1,30 @@
 # url-shorter
+![image](https://user-images.githubusercontent.com/83240328/211209015-a34a7ef6-1f09-4fd8-a6f9-02cf545fc80d.png)
+
+
+<p align="center">
+<img src="https://img.shields.io/badge/Build-automated-blue" />
+<img src="https://img.shields.io/github/languages/code-size/hakimov-dev/url-shorter" />
+<img src="https://img.shields.io/bitbucket/issues/hakimov-dev/url-shorter">
+<img src="https://img.shields.io/github/last-commit/hakimov-dev/url-shorter">
+<img src="https://img.shields.io/github/package-json/v/hakimov-dev/url-shorter">
+<img src="https://img.shields.io/website?url=https%3A%2F%2Furl-shorter%2F">
+<img src="https://img.shields.io/github/stars/hakimov-dev/url-shorter?style=flat&logo=github">
+<img src="https://img.shields.io/github/watchers/hakimov-dev/url-shorter?style=social">
+</p>
+
+## About of project 📋
+This aplication can help you for creating any short links. You need enter something at input and click generate btn and done. You have new generated qr-code.
+
+Then u can copy the shorten url and share with anyone :)
+
+## Additional 👨‍💻
+### Why url-shorter?
+
+When faced with long URLs, research has shown that most internet users initially believe the link is spam, so it is easy to see why short URLs appeal to those who want to drive traffic to their site. Your URL is the very first impression your website will make, yet it is something people often overlook.
+
+People have a natural tendency to associate a shorter URL with a more reputable site. When seeing a long string of characters and letters, users may feel apprehensive about the website. Though many legitimate sites have long URLs users still associate legitimacy with a shortened URL.
+
 
 ## Build Setup
 
