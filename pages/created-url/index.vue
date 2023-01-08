@@ -30,10 +30,19 @@
   export default{
     data() {
       return {
-        url: ''
+        url_about: null,
       }
     },
   
-    methods: {}
+    methods: {},
+
+    created() {
+      if(sessionStorage.url_about){
+        this.url_about = JSON.parse(sessionStorage.url_about)
+        sessionStorage.removeItem('url_about')
+      }else{
+        this.$router.push('/')
+      }
+    },
   }
   </script>
