@@ -24,4 +24,12 @@
 <script setup>
 import { isValidURL } from '@/utils/reusable'
 const value = ''
+
+function getURL(){
+  if(value !== ''){
+    if(isValidURL(value)){
+      console.log('succesfuly')
+    }
+  }
+}
 </script>
