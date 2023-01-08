@@ -40,7 +40,11 @@ export default{
     if(isValidURL(this.url)){
       postURL(this.url)
         .then(res => {
-          sessionStorage.setItem('url_code', res.data.result.code)
+          sessionStorage.setItem('url_about', JSON.stringify({
+            url_code: res.data.result.code,
+            long_url: res.data.result.original_link
+          }))
+          this.$router.push('/created-url')
         })
         .catch(e => {
          notification['error']({
@@ -59,6 +63,10 @@ export default{
     })
   }
   }
-}
+},
+
+  created() {
+    sessionStorage.removeItem('url_about')    
+  },
 }
 </script>
