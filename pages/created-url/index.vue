@@ -9,13 +9,13 @@
         <p class="text-[16px] font-medium mb-4">Copy the shortened link and share it in messages, texts, posts, websites and other locations.</p>
         <!-- eslint-disable -->
         <a-input-search
-          v-model:value="url"
+          v-model:value="url_about.url"
           placeholder="Enter long url"
           enter-button="Copy URL"
           size="large"
         />
         <p class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
-            Long URL:
+            Long URL: {{ url_about.long_url }}
         </p>
         <p class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
             Create other <nuxt-link class="text-[#009DFF]" to="/">Shorten URL</nuxt-link>.
@@ -39,6 +39,7 @@
     created() {
       if(sessionStorage.url_about){
         this.url_about = JSON.parse(sessionStorage.url_about)
+        this.url_about.url = window.location.origin + '/' + this.url_about.url_code
         sessionStorage.removeItem('url_about')
       }else{
         this.$router.push('/')
