@@ -26,6 +26,7 @@
 /*eslint-disable */
 import { notification } from 'ant-design-vue';
 import { isValidURL } from '@/utils/reusable'
+import { postURL } from '@/services';
 export default{
   data() {
     return {
