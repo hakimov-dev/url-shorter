@@ -53,28 +53,3 @@ export default{
 }
 }
 </script>
-
-<!-- <script setup>
-/*eslint-disable */
-import { ref } from '@vue/composition-api'
-import { notification } from 'ant-design-vue';
-import { isValidURL } from '@/utils/reusable'
-let url = ref('')
-
-function getURL(){
-  if(url.value !== ''){
-    if(isValidURL(url.value)){
-      console.log('succesfuly')
-    }else{
-      notification['error']({
-       message: 'Url is not valid?! Check URL next try again'
-      }) 
-    }
-  }else{
-    console.log(url.value)
-    notification['error']({
-      message: 'Enter url for get shorten url!'
-    })
-  }
-}
-</script> -->
