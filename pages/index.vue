@@ -40,7 +40,7 @@ export default{
     if(isValidURL(this.url)){
       postURL(this.url)
         .then(res => {
-          console.log(res)
+          sessionStorage.setItem('url_code', res.data.result.code)
         })
         .catch(e => {
          notification['error']({
