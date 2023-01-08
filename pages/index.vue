@@ -23,13 +23,22 @@
 
 <script setup>
 import { isValidURL } from '@/utils/reusable'
+import { notification } from 'ant-design-vue';
 const value = ''
 
 function getURL(){
   if(value !== ''){
     if(isValidURL(value)){
       console.log('succesfuly')
+    }else{
+      notification['error']({
+       message: 'Url not valid?! Check URL next try again'
+      }) 
     }
+  }else{
+    notification['error']({
+      message: 'Enter url for get shorten url!'
+    })
   }
 }
 </script>
