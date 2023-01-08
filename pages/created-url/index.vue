@@ -1,6 +1,7 @@
 <template>
     <div class="mt-[10%] flex justify-center">
       <div
+        v-if="url_about"
         class="custom-card border-2 border-gray-400 rounded h-auto w-[40%] p-[16px] text-center"
       >
         <h1 class="text-2xl font-bold mt-1">
