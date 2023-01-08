@@ -15,6 +15,7 @@
           placeholder="Enter long url"
           enter-button="Copy URL"
           size="large"
+          @change="changeInt"
           @search="copy(url_about.url)"
         />
         <p v-if="url_about.long_url" class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
@@ -43,7 +44,6 @@
       if(state.url_abouts){
         this.url_about = state.url_abouts
         this.url_about.url = window.location.origin.split('/')[2] + '/' + this.url_about.url_code
-        state.url_abouts
       }else{
         this.$router.push('/')
       }
@@ -51,6 +51,10 @@
 
      copy(url){
       return copyURL(url)
+     },
+
+     changeInt(){
+      this.url_about.url = window.location.origin.split('/')[2] + '/' + state.url_abouts.url_code
      }
     },
 
@@ -61,7 +65,7 @@
     watch: {
       'url_about.url'(newValue, oldValue){
         if(newValue !== window.location.origin.split('/')[2] + '/' + this.url_about.url_code)
-          this.url_about.url = window.location.origin.split('/')[2] + '/' + this.url_about.url_code
+           this.changeInt()          
       }
     },
   }
