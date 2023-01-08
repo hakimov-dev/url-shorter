@@ -2,12 +2,12 @@
     <div class="mt-[10%] flex justify-center">
       <div
         v-if="url_about"
-        class="custom-card border-2 border-gray-400 rounded h-auto w-[40%] p-[16px] text-center"
+        class="custom-card border-2 border-gray-400 rounded h-auto w-[40%] p-[16px] overflow-hidden"
       >
-        <h1 class="text-2xl font-bold mt-1">
+        <h1 class="text-2xl font-bold mt-1 text-center">
             Your shortened URL
         </h1>
-        <p class="text-[16px] font-medium mb-4">Copy the shortened link and share it in messages, texts, posts, websites and other locations.</p>
+        <p class="text-[16px] text-center font-medium mb-4">Copy the shortened link and share it in messages, texts, posts, websites and other locations.</p>
         <!-- eslint-disable -->
         <a-input-search
           v-if="url_about.url"
@@ -18,8 +18,8 @@
           @change="changeInt"
           @search="copy(url_about.url)"
         />
-        <p v-if="url_about.long_url" class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
-            Long URL: {{ url_about.long_url }}
+        <p v-if="url_about.long_url" class="my-3 mt-8 text-lg leading-[20px] flex flex-wrap mx-auto font-medium">
+            Long URL: <a class="text-[#009DFF] text-[16px]" :href="url_about.long_url">{{ url_about.long_url }}</a>
         </p>
         <p class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
             Create other <nuxt-link class="text-[#009DFF]" to="/">Shorten URL</nuxt-link>.
