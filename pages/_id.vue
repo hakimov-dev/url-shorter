@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { getURL } from '@/services'
 export default{
     layout: 'none'
 }
