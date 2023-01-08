@@ -12,6 +12,7 @@
         placeholder="Enter long url"
         enter-button="Shorten URL"
         size="large"
+        @search="getURL"
       />
       <p class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
         URL Shorter is a free tool to shorten a URL or reduce a link Use our URL
@@ -22,20 +23,23 @@
 </template>
 
 <script setup>
-import { isValidURL } from '@/utils/reusable'
+/*eslint-disable */
+import { ref } from 'vue'
 import { notification } from 'ant-design-vue';
-const value = ''
+import { isValidURL } from '@/utils/reusable'
+let url = ref('')
 
 function getURL(){
-  if(value !== ''){
-    if(isValidURL(value)){
+  if(url.value !== ''){
+    if(isValidURL(url.value)){
       console.log('succesfuly')
     }else{
       notification['error']({
-       message: 'Url not valid?! Check URL next try again'
+       message: 'Url is not valid?! Check URL next try again'
       }) 
     }
   }else{
+    console.log(url.value)
     notification['error']({
       message: 'Enter url for get shorten url!'
     })

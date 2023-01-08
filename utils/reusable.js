@@ -1,4 +1,4 @@
-
+/*eslint-disable */
 export function isValidURL(url) {
     if(!url) return false;
     var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
