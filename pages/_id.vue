@@ -5,9 +5,24 @@
 </template>
 
 <script>
+  /*eslint-disable */
 import { getURL } from '@/services'
+import { notification } from 'ant-design-vue'
 export default{
-    layout: 'none'
+    layout: 'none',
+
+    beforeMount() {
+      getURL(this.$route.params.id)
+        .then(res => {
+           window.location.href = res.data.result.url
+        })
+        .catch(e => {
+            notification['error']({
+                message: 'URL not found'
+            })
+            this.$router.push('/')
+        })
+    },
 }
 </script>
 
