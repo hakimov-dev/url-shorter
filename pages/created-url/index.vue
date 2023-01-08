@@ -12,7 +12,6 @@
           v-model:value="url_about.url"
           placeholder="Enter long url"
           enter-button="Copy URL"
-          @change="changeInt"
           size="large"
         />
         <p class="mx-2 my-3 mt-8 text-lg leading-[20px] font-medium">
@@ -27,7 +26,6 @@
   
   <script>
   /*eslint-disable */
-  import { notification } from 'ant-design-vue';
   export default{
     data() {
       return {
@@ -35,16 +33,20 @@
       }
     },
   
-    methods: {},
-
-    created() {
-      if(sessionStorage.url_about){
+    methods: {
+     getURlAbouts(){
+      if(sessionStorage.getItem('url_about')){
         this.url_about = JSON.parse(sessionStorage.url_about)
         this.url_about.url = window.location.origin + '/' + this.url_about.url_code
         sessionStorage.removeItem('url_about')
       }else{
         this.$router.push('/')
       }
+     }
+    },
+
+    created() {
+     this.getURlAbouts()
     },
   }
   </script>
