@@ -1,9 +1,9 @@
-import axios from 'axios'
+import { api } from '@/api'
 
 export function postURL(url){
-  return axios.post(`/shorten?url=${url}`)
+  return api.post(`/shorten?url=${url}`)
 }
 
 export function getURL(code){
-    return axios.get(`info?code=${code}`)
+    return api.get(`info?code=${code}`)
 }
