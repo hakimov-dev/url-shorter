@@ -8,7 +8,7 @@
       </h1>
       <!-- eslint-disable -->
       <a-input-search
-        v-model:value="value"
+        v-model:value="url"
         placeholder="Enter long url"
         enter-button="Shorten URL"
         size="large"
@@ -22,9 +22,41 @@
   </div>
 </template>
 
-<script setup>
+<script>
 /*eslint-disable */
-import { ref } from 'vue'
+import { notification } from 'ant-design-vue';
+import { isValidURL } from '@/utils/reusable'
+export default{
+  data() {
+    return {
+      url: ''
+    }
+  },
+
+  methods: {
+    getURL(){
+  if(this.url !== ''){
+    if(isValidURL(this.url)){
+      console.log('succesfuly')
+    }else{
+      notification['error']({
+       message: 'Url is not valid?! Check URL next try again'
+      })
+    }
+  }else{
+    console.log(this.url)
+    notification['error']({
+      message: 'Enter url for get shorten url!'
+    })
+  }
+  }
+}
+}
+</script>
+
+<!-- <script setup>
+/*eslint-disable */
+import { ref } from '@vue/composition-api'
 import { notification } from 'ant-design-vue';
 import { isValidURL } from '@/utils/reusable'
 let url = ref('')
@@ -45,4 +77,4 @@ function getURL(){
     })
   }
 }
-</script>
+</script> -->
