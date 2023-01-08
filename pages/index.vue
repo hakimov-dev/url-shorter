@@ -38,7 +38,15 @@ export default{
     getURL(){
   if(this.url !== ''){
     if(isValidURL(this.url)){
-      console.log('succesfuly')
+      postURL(this.url)
+        .then(res => {
+          console.log(res)
+        })
+        .catch(e => {
+         notification['error']({
+           message: e.response.data.message
+         })     
+        })
     }else{
       notification['error']({
        message: 'Url is not valid?! Check URL next try again'
